@@ -11,7 +11,7 @@ try {
 		die("Connection failed: " . $conn->connect_error);
 	}
 	if ($_GET["action"] == "list") {
-		$sql = 'SELECT * FROM policies';
+		$sql = 'SELECT * FROM policies WHERE motum_vin = 1';
 		$dbPolicies = $conn->query($sql);
 		$policies = [];
 		while ($row = $dbPolicies->fetch_assoc()) {

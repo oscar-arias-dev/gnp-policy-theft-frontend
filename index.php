@@ -76,39 +76,48 @@
                     },
                     vin: {
                         title: 'VIN',
-                        width: '15%',
                     },
                     placas: {
                         title: 'Placa',
-                        width: '10%',
                     },
                     status_robo: {
                         title: 'Status de robo',
-                        width: '15%',
                     },
                     motum_status: {
                         title: 'MOTUM Status',
-                        width: '8%',
                     },
                     motum_vin: {
                         title: 'MOTUM VIN',
-                        width: '8%',
                     },
                     codigo_siniestro: {
                         title: 'Siniestro',
-                        width: '20%',
                     },
                     fecha_siniestro: {
                         title: 'Fecha Siniestro',
-                        width: '20%',
                     },
                     uuid: {
                         title: 'UUID',
-                        width: '50%',
+                    },
+                    tipo_vehiculo: {
+                        title: 'Tipo',
+                    },
+                    clasificacion_vehiculo: {
+                        title: 'Clasificación',
+                    },
+                    marca_vehiculo: {
+                        title: 'Marca',
+                    },
+                    submarca_vehiculo: {
+                        title: 'Submarca',
+                    },
+                    estado_circulacion: {
+                        title: 'Estado',
+                    },
+                    modelo_vehiculo: {
+                        title: 'Modelo',
                     },
                     created_at: {
                         title: 'Registro interno',
-                        width: '20%',
                     },
                     action: {
                         title: 'Estado',
@@ -142,7 +151,7 @@
                                 }
                             ];
                             let options = filtered;
-                            let isMotumVim = data?.record?.motum_vin === 1 ? "" : "disabled";
+                            let isMotumVim = data?.record?.motum_vin?.toString() === "1" ? "" : "disabled";
                             let select = '<select ' + isMotumVim + ' data-original-value="' + currentClave + '" onchange="actualizarEstado(\'' + data.record.id + '\', \'' + data.record.codigo_siniestro + '\', this.value, this)">';
                             options.forEach(opt => {
                                 const selectedValue = opt.clave === currentClave ? "selected" : "";
